@@ -1,0 +1,59 @@
+<app-header></app-header>
+<div class="container">
+  <mat-toolbar class="barra">
+    <span class="spacer"></span>
+  </mat-toolbar>
+  <DIv class="spacio"> </DIv>
+  <h2 class="titulo">STOCK DE LICORES DISPONIBLES </h2>
+  <div>
+    <mat-form-field appearance="outline" fxLayoutAlign="auto" >
+      <mat-label  >Buscar Licor</mat-label>
+      <input   matInput (keyup)="filtro($event)" placeholder="Pilsener, vino etc " #input class="filtro">
+      <button class="boton"  mat-raised-button color="warn" (click)="DialogoN()"> + NUEVO LICOR</button>
+    </mat-form-field>
+    <div class="mat-elevation-z8">
+
+      <table mat-table [dataSource]="datos" matSort>
+
+        <ng-container matColumnDef="Nombre">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Nombre </th>
+          <td mat-cell *matCellDef="let row"> {{row.Nombre}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Tipo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Tipo </th>
+          <td mat-cell *matCellDef="let row"> {{row.Tipo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ContenidoNeto">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Contenido Neto </th>
+          <td mat-cell *matCellDef="let row"> {{row.ContenidoNeto}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Precio">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Precio </th>
+          <td mat-cell *matCellDef="let row"> ${{row.Precio}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Cantidad">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Cantidad </th>
+          <td mat-cell *matCellDef="let row"> {{row.Cantidad}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="Columnas"></tr>
+        <tr mat-row *matRowDef="let row; columns: Columnas;"></tr>
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No se econtraron datos "{{input.value}}"</td>
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+
+  </div>
+
+  </div>
+  <app-footer></app-footer>
+
+

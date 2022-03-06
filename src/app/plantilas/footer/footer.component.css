@@ -1,0 +1,15 @@
+
+.barra{
+  background-color: white;
+  opacity: 0;
+  height: 30px;
+}
+.footer{
+  height: 60px;
+  display:block;
+  margin:auto;
+  padding: 0px;
+  background-image: url(/assets/pared2.jpg);
+  opacity: 0.90;
+
+}

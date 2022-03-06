@@ -1,0 +1,81 @@
+<app-header></app-header>
+<mat-toolbar class="barra">
+  <span class="spacer"></span>
+</mat-toolbar>
+<div class="container">
+  <DIv class="spacio"> </DIv>
+  <h2 class="titulo">ADMINISTRAR LICORES </h2>
+  <div>
+
+    <mat-form-field appearance="outline">
+      <mat-label >Buscar Licor</mat-label>
+      <input class="spacer" matInput (keyup)="filtro($event)" placeholder="Pilsener, vino etc " #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="datos" matSort>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Nombre">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Nombre </th>
+          <td mat-cell *matCellDef="let row"> {{row.Nombre}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Tipo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Tipo </th>
+          <td mat-cell *matCellDef="let row"> {{row.Tipo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ContenidoNeto">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Contenido Neto </th>
+          <td mat-cell *matCellDef="let row"> {{row.ContenidoNeto}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Precio">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Precio </th>
+          <td mat-cell *matCellDef="let row"> ${{row.Precio}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Cantidad">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Cantidad </th>
+          <td mat-cell *matCellDef="let row"> {{row.Cantidad}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="GradoAlcohol">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Grado de Alcohol </th>
+          <td mat-cell *matCellDef="let row"> {{row.GradoAlcohol}}° </td>
+        </ng-container>
+
+        <ng-container matColumnDef="PaisdeOrigen">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Pais de Origen </th>
+          <td mat-cell *matCellDef="let row"> {{row.PaisdeOrigen}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="boton">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="select"> Acciones </th>
+          <td mat-cell *matCellDef="let row"  >
+            <button mat-icon-button color="primary" (click)="EditarLicor(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="eliminar(row.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="Columnas"></tr>
+        <tr mat-row *matRowDef="let row; columns: Columnas;"></tr>
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No se econtraron datos "{{input.value}}"</td>
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

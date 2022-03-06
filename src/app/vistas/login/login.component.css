@@ -1,0 +1,47 @@
+.main-div
+{
+    padding: 0px;
+  background-image: url(/assets/fondo2.jpg)
+}
+.caja{
+  opacity: 0.93;
+}
+.imagen{
+  width: 50px;
+  height: 10px ;
+  background: url(/assets/fondo.jpg) no-repeat center center;
+
+  display: flex;
+  justify-content: center;
+}
+
+.login-form{
+
+  padding: 20px;
+}
+.bajo{
+
+  background-image: url(/assets/fondo.jpg);
+  max-width: 100%;
+}
+
+.centrar
+{
+  display: flex;
+  justify-content: center;
+  font-family: Lobster;
+  background-color:rgb(34, 90, 109);
+  font-size: 30px;
+  color:white;
+  font-weight:bold;
+  font-size:2em;
+  font-family:'Helvetica','Verdana','Monaco',sans-serif;
+
+}
+.boton
+{
+  background-color: rgb(233, 233, 233);
+  font-weight:bold;
+  color: rgb(42, 126, 126);
+
+}

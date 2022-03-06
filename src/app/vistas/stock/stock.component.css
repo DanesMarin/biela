@@ -1,0 +1,61 @@
+.spacer {
+  flex: 12 1 auto;
+}
+table {
+  width: 100%;
+
+}
+
+.boton{
+  position: fixed;
+  left: 85%;
+   -webkit-transform: translate(-50%, -50%);
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+.barra{
+  background-color: white;
+  height: 30px;
+}
+.select{
+
+  background-color:#9fff;
+  font-weight:bold;
+  font-size: 15px;
+
+ }
+
+ .filtro{
+  left: 100%;
+ }
+ .titulo{
+
+  justify-content: center;
+  display: flex;
+
+ }
+ .spacio{
+  height: 60px;
+  display:block;
+  margin:auto;
+  padding: 0px;
+  background-image: url(/assets/fondo2.jpg);
+  opacity: 0.60;
+
+
+}
+.spacioblanco{
+  height: 20px;
+  display:block;
+  margin:auto;
+  padding: 0px;
+}

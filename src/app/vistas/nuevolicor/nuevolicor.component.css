@@ -1,0 +1,18 @@
+.mat-form-field
+{
+width:50%;
+}
+.spacer {
+  flex: 2 1 auto;
+}
+.formulario
+{
+  height: 1% ;
+}
+.centrar
+{
+  display: flex;
+  justify-content: center;
+  font-family: Lobster;
+
+}

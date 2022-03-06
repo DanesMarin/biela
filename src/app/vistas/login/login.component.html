@@ -1,0 +1,23 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div" >
+  <mat-card fxFlex="22" class="caja">
+    <div fxLayoutAlign="center center" >
+        <img src="assets/LOGO.jpg" fxFlexFill="22" class="image">
+    </div>
+    <mat-toolbar class="centrar">ADMINISTRADOR</mat-toolbar>
+    <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="loginformulario"   (ngSubmit)="login()">
+      <mat-form-field appearance="outline">
+        <mat-label>E-MAIL</mat-label>
+        <input matInput formControlName="email" placeholder="">
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>CONTRASEÑA</mat-label>
+        <input matInput formControlName="clave" type="password" placeholder="CONTRASENA">
+        <mat-icon matSuffix>vpn_key</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button type="ingresar" class="boton" type="submit">INGRESAR</button>
+    </form>
+  </mat-card>
+</div>
+

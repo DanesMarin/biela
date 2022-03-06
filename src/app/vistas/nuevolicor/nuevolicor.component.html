@@ -1,0 +1,70 @@
+<div fxLayoutAlign="center center" >
+  <img src="assets/LOGO.jpg" fxFlexFill class="image">
+</div>
+<div matDialogContent class="formulario">
+  <form [formGroup]="nuevolicorForm" (ngSubmit)="onSubmit()" #f="ngForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre de Licor</mat-label>
+      <input formControlName="Nombre" matInput placeholder="">
+      <mat-icon matSuffix>local_bar</mat-icon>
+      <mat-hint>Ejemplo Club verde</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tipo de licor</mat-label>
+      <mat-select formControlName="Tipo">
+        <mat-option value="Aguardiente">Aguardiente</mat-option>
+        <mat-option value="Cerveza">Cerveza</mat-option>
+        <mat-option value="Coctel">Coctel</mat-option>
+        <mat-option value="Currincho">Currincho</mat-option>
+        <mat-option value="Tequila">Tequila</mat-option>
+        <mat-option value="Ron">Ron</mat-option>
+        <mat-option value="Vodkas">Vodkas</mat-option>
+        <mat-option value="Vino">Vino</mat-option>
+        <mat-option value="Whisky">Whisky</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Contenido Neto</mat-label>
+      <mat-select formControlName="ContenidoNeto">
+        <mat-option value="200ml">200ml</mat-option>
+        <mat-option value="500ml">500ml</mat-option>
+        <mat-option value="750ml">750ml</mat-option>
+        <mat-option value="1L">1L</mat-option>
+        <mat-option value="1.25L">1.25L</mat-option>
+        <mat-option value="1.5L">1.5L</mat-option>
+        <mat-option value="2L">2L</mat-option>
+        <mat-option value="4L">4L</mat-option>
+        <mat-option value="5L">5L</mat-option>
+        <mat-option value="20L">20L</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Precio</mat-label>
+      <input formControlName="Precio" matInput type="number" value=0.00>
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix></span>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cantidad</mat-label>
+      <input formControlName="Cantidad" matInput type="number" value=0>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Grado de Alcohol</mat-label>
+      <input formControlName="GradoAlcohol" matInput type="number" value=0>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Pais de Origen</mat-label>
+      <input formControlName="PaisdeOrigen" matInput class="mayu">
+    </mat-form-field>
+  </form>
+  <button type="submit" [disabled]="f.invalid" mat-raised-button color="primary" (click)="nuevoLicor()">{{bGuardar}}</button>
+  <button style="margin-left:8px;" mat-dialog-close mat-raised-button color="accent">SALIR</button>
+
+</div>
